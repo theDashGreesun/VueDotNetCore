@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import 'bootstrap'
 import '../Scss/app.scss';
 
@@ -22,3 +23,11 @@ col1.innerHTML = '<p>Hello Webpack.</p>'
 col2.innerHTML = '<p>Wahoooo. that is awesome</p>'
 
 document.body.appendChild(root);
+
+
+new Vue({
+  el: '#vueApp',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})

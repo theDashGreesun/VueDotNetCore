@@ -7,6 +7,13 @@ module.exports = {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	},
+	
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        },
+        extensions: ['*', '.js', '.vue', '.json']
+    },
 	module: {
 		rules: [{
 				test: /\.(scss)$/,
@@ -50,10 +57,14 @@ module.exports = {
 						configFile: __dirname + '/.eslintrc'
 					},
 				}
+			} , {
+				test:/\.vue$/, 
+				loader: 'vue-loader'
 			}
 		]
 	},
 	plugins: [
 		plugins.StyleLintPlugin,
+		plugins.VueLoaderPlugin,
 	]
 }
